@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">MisContactosApp</string>
+    <string name="nombre">Neme Copado</string>
+    <string name="telefono">999999999</string>
+    <string name="correo">ncopado@gmail.com</string>
+    <string name="pnombre">nombre</string>
+    <string name="ptelefono">telefono</string>
+    <string name="pcorreo">correo</string>
+</resources>
