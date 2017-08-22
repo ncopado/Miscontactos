@@ -1,13 +1,17 @@
 package com.ncopado.miscontactosapp;
 
 import android.Manifest;
+import android.app.ActionBar;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
+import android.view.Gravity;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class DetalleContacto extends AppCompatActivity {
@@ -17,10 +21,22 @@ public class DetalleContacto extends AppCompatActivity {
     private TextView txtTelefono;
     private TextView txtEmail;
 
+    private Toolbar toolbar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalle_contacto);
+
+
+        toolbar = (Toolbar) findViewById(R.id.miActionBar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+//add app icon inside the Toolbar
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setIcon(R.mipmap.ic_launcher);
+
+
 
         Bundle bundle = getIntent().getExtras();
         String nombre = bundle.getString(getResources().getString(R.string.pnombre));

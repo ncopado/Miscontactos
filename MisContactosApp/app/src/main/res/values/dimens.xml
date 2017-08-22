@@ -3,5 +3,6 @@
     <dimen name="nombre_contacto">35dp</dimen>
     <dimen name="size">20sp</dimen>
     <dimen name="margin_layout_top">20dp</dimen>
+    <dimen name="corner_radius_carview">4dp</dimen>
 
 </resources>

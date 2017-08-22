@@ -3,6 +3,10 @@ package com.ncopado.miscontactosapp;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -13,26 +17,42 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     ArrayList<Contacto> lstContacto;
+    private RecyclerView listaContactos;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        lstContacto=new ArrayList<Contacto>();
 
-        lstContacto.add(new Contacto("Neme Copado","2291615266","ncopado@gmail.com"));
-        lstContacto.add(new Contacto("Paco Copado","2291615266"));
-        lstContacto.add(new Contacto("Kary Copado","2291615266"));
-        lstContacto.add(new Contacto("Carolina","2291615266"));
-        lstContacto.add(new Contacto("Samy Copado","2291615266"));
+        /*Toolbar miActionBar=(Toolbar) findViewById(R.id.miActionBar);
+        setSupportActionBar(miActionBar);
+        */
 
 
-        ArrayList<String> nombreContactos=new ArrayList<>();
+
+        listaContactos=(RecyclerView) findViewById(R.id.rvContactos);
+
+
+        LinearLayoutManager llm=new LinearLayoutManager(this);
+
+        llm.setOrientation(LinearLayoutManager.VERTICAL);
+
+      /*  GridLayoutManager glm=new GridLayoutManager(this,2);*/
+
+        listaContactos.setLayoutManager(llm);
+        InicilizarListaContactos();
+        InicializarAdaptador();
+
+
+
+
+        /* ArrayList<String> nombreContactos=new ArrayList<>();
 
         for (Contacto contacto:lstContacto) {
 
             nombreContactos.add(contacto.getNombre());
         }
+
 
         //Buscas el listview
         ListView  lst=(ListView)  findViewById(R.id.lstContactos);
@@ -50,6 +70,24 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+        */
+    }
+
+    public  void InicializarAdaptador(){
+        ContactoAdaptador adaptador=new ContactoAdaptador(lstContacto,this);
+        listaContactos.setAdapter(adaptador);
+    }
+
+    public  void  InicilizarListaContactos(){
+
+        lstContacto=new ArrayList<Contacto>();
+
+        lstContacto.add(new Contacto(R.drawable.rayo,"Neme Copado","2291615266","ncopado@gmail.com"));
+        lstContacto.add(new Contacto(R.drawable.rayo,"Paco Copado","2291615266","ncopado@gmail.com"));
+        lstContacto.add(new Contacto(R.drawable.rayo,"Kary Copado","2291615266","ncopado@gmail.com"));
+        lstContacto.add(new Contacto(R.drawable.rayo,"Carolina","2291615266","ncopado@gmail.com"));
+        lstContacto.add(new Contacto(R.drawable.rayo,"Samy Copado","2291615266","ncopado@gmail.com"));
+
 
     }
 }

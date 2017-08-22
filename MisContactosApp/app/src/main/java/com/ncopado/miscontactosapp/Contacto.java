@@ -9,13 +9,15 @@ public class Contacto {
     private String Nombre;
     private String Telefono;
     private String Email;
+    private  int Foto;
 
     public Contacto(String nombre, String telefono) {
        this.Nombre = nombre;
         this.Telefono = telefono;
     }
 
-    public Contacto(String nombre, String telefono, String email) {
+    public Contacto(int foto ,String nombre, String telefono, String email) {
+        this.Foto=foto;
         Nombre = nombre;
         Telefono = telefono;
         Email = email;
@@ -43,5 +45,14 @@ public class Contacto {
 
     public void setEmail(String email) {
         Email = email;
+    }
+
+
+    public int getFoto() {
+        return Foto;
+    }
+
+    public void setFoto(int foto) {
+        Foto = foto;
     }
 }

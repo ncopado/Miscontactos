@@ -6,10 +6,35 @@
     android:layout_height="match_parent"
     tools:context="com.ncopado.miscontactosapp.MainActivity">
 
+
+    <!--
+    <include android:id="@+id/miActionBar"
+        layout="@layout/actionbar">
+
+    </include>
+-->
+
+<!--
     <ListView
         android:id="@+id/lstContactos"
         android:layout_width="match_parent"
         android:layout_height="match_parent"></ListView>
+
+
+    <include android:id="@+id/miActionBar"
+        layout="@layout/actionbar"
+        ></include>
+         -->
+    
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvContactos"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:padding="10dp"
+        android:layout_below="@+id/miActionBar"
+
+        />
 
 </RelativeLayout>
 
