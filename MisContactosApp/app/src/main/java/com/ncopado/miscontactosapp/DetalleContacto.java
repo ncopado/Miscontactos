@@ -21,7 +21,7 @@ public class DetalleContacto extends AppCompatActivity {
     private TextView txtTelefono;
     private TextView txtEmail;
 
-    private Toolbar toolbar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,12 +29,6 @@ public class DetalleContacto extends AppCompatActivity {
         setContentView(R.layout.activity_detalle_contacto);
 
 
-        toolbar = (Toolbar) findViewById(R.id.miActionBar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayShowTitleEnabled(false);
-//add app icon inside the Toolbar
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setIcon(R.mipmap.ic_launcher);
 
 
 
